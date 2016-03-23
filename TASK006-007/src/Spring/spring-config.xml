@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+
+    <bean id="appleJuice" class="Classes.AppleJuice">
+        <constructor-arg name="name" value="apple juice YA" />
+        <constructor-arg name="mass" value="250"/>
+    </bean>
+
+    <bean id="champagne" class="Classes.Champagne">
+        <constructor-arg name="name" value="Moet Chandon" />
+        <constructor-arg name="mass" value="700"/>
+    </bean>
+
+    <bean id="tiramisu" class="Classes.Tiramisu">
+        <constructor-arg name="name" value="Tiramisu" />
+        <constructor-arg name="mass" value="200"/>
+    </bean>
+
+    <bean id="Americano" class="Classes.Coffee">
+        <constructor-arg name="name" value="Americano" />
+        <constructor-arg name="mass" value="200"/>
+        <constructor-arg name="dessert" ref="tiramisu"/>
+    </bean>
+
+    <bean id="espresso" class="Classes.Coffee">
+        <constructor-arg name="name" value="espresso" />
+        <constructor-arg name="mass" value="200"/>
+        <constructor-arg name="dessert" ref="tiramisu"/>
+    </bean>
+
+    <bean id="Iced" class="Classes.Coffee">
+        <constructor-arg name="name" value="iced" />
+        <constructor-arg name="mass" value="200"/>
+        <constructor-arg name="dessert" ref="tiramisu"/>
+    </bean>
+
+    <bean id="cappuccino" class="Classes.Coffee">
+        <constructor-arg name="name" value="cappuccino" />
+        <constructor-arg name="mass" value="200"/>
+        <constructor-arg name="dessert" ref="tiramisu"/>
+    </bean>
+
+    <bean id="doradoSoup" class="Classes.DoradoSoup">
+        <constructor-arg name="name" value="Dorado Soup" />
+        <constructor-arg name="mass" value="300"/>
+    </bean>
+
+    <bean id="olivieOil" class="Classes.OlivieOil">
+        <constructor-arg name="name" value="Olivie Oil" />
+        <constructor-arg name="mass" value="500"/>
+    </bean>
+
+    <bean id="greeceSalad" class="Classes.GreeceSalad">
+        <constructor-arg name="name" value="Greece Salad" />
+        <constructor-arg name="mass" value="220"/>
+        <constructor-arg name="sause" ref="olivieOil"/>
+    </bean>
+
+    <bean id="grilledShrimps" class="Classes.GrilledShrimps">
+        <constructor-arg name="name" value="Grilled Shrimps" />
+        <constructor-arg name="mass" value="333"/>
+        <constructor-arg name="sause" ref="olivieOil"/>
+    </bean>
+
+    <bean id="beer" class="Classes.Beer">
+        <constructor-arg name="name" value="Kozel Dark" />
+        <constructor-arg name="mass" value="700"/>
+        <constructor-arg name="appetazer" ref="grilledShrimps"/>
+        <constructor-arg name="alcohol" value="true"/>
+    </bean>
+
+    <bean id="mushroomSoup" class="Classes.MushroomSoup">
+        <constructor-arg name="name" value="Mushroom Soup" />
+        <constructor-arg name="mass" value="210"/>
+    </bean>
+
+    <bean id="olivie" class="Classes.Olivie">
+        <constructor-arg name="name" value="Salad Olivie" />
+        <constructor-arg name="mass" value="100"/>
+    </bean>
+
+    <bean id="ragout" class="Classes.Ragout">
+        <constructor-arg name="name" value="vegetable ragout" />
+        <constructor-arg name="mass" value="350"/>
+        <constructor-arg name="sause" ref="olivieOil"/>
+    </bean>
+
+    <bean id="salmonTartar" class="Classes.SalmonTartar">
+        <constructor-arg name="name" value="Salmon Tartar" />
+        <constructor-arg name="mass" value="120"/>
+    </bean>
+
+    <bean id="steak" class="Classes.Steak">
+        <constructor-arg name="name" value="Veal Steak" />
+        <constructor-arg name="mass" value="200"/>
+        <constructor-arg name="garnish" ref="ragout"/>
+    </bean>
+
+</beans>
